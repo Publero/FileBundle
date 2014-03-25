@@ -1,0 +1,19 @@
+services:
+    publero_file.filesystem:
+        class: Publero\FileBundle\Filesystem\RelativeFilesystem
+        arguments: [ '%publero_file.directory%' ]
+
+    publero_file.filename_generator:
+        class: Publero\FileBundle\FileNameGenerator\FileNameGenerator
+        calls:
+            - [ setFilesystem, [ '@publero_file.filesystem' ] ]
+            - [ setNameGenerator, [ '@publero_file.hash_generator' ] ]
+
+    publero_file.listener.entity:
+        class: Publero\FileBundle\Listener\EntityListener
+        calls:
+            - [ setContainer, [ '@service_container' ] ]
+        tags:
+            - { name: doctrine.event_listener, event: prePersist }
+            - { name: doctrine.event_listener, event: preUpdate }
+            - { name: doctrine.event_listener, event: preRemove }
