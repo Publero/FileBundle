@@ -2,18 +2,20 @@
     "name": "publero/file-bundle",
     "type": "symfony-bundle",
     "description": "File Bundle",
-    "keywords": ["publero", "file"],
-    "homepage": "https://github.com/publero/FileBundle",
+    "keywords": ["publero", "file", "storage"],
+    "homepage": "https://github.com/Publero/FileBundle",
     "license": "MIT",
     "authors": [
         {
-            "name": "Publero",
+            "name": "Tomas Pecserke",
             "email": "developers@publero.com"
         }
     ],
     "require": {
         "php": ">=5.4.0",
-        "symfony/framework-bundle": "~2.1"
+        "symfony/framework-bundle": "~2.1",
+        "stof/doctrine-extensions-bundle": "1.1.*@dev",
+        "publero/code-generator": "dev-feature/sequence-generator"
     },
     "autoload": {
         "psr-0": { "Publero\\FileBundle": "" }
