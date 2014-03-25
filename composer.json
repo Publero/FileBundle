@@ -1,0 +1,22 @@
+{
+    "name": "publero/file-bundle",
+    "type": "symfony-bundle",
+    "description": "File Bundle",
+    "keywords": ["publero", "file"],
+    "homepage": "https://github.com/publero/FileBundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Publero",
+            "email": "developers@publero.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "symfony/framework-bundle": "~2.1"
+    },
+    "autoload": {
+        "psr-0": { "Publero\\FileBundle": "" }
+    },
+    "target-dir": "Publero/FileBundle"
+}
