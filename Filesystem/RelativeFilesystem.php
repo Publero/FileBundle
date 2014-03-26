@@ -101,9 +101,9 @@ class RelativeFilesystem extends Filesystem
         parent::chgrp($this->makePathAbsolute($files), $group, $recursive);
     }
 
-    public function rename($origin, $target)
+    public function rename($origin, $target, $overwrite = false)
     {
-        parent::rename($this->makePathAbsolute($origin), $this->makePathAbsolute($target));
+        parent::rename($this->makePathAbsolute($origin), $this->makePathAbsolute($target), $overwrite);
     }
 
     public function symlink($originDir, $targetDir, $copyOnWindows = false)
